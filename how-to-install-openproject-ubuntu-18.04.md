@@ -6,8 +6,13 @@
 ```sh
 wget -qO- https://dl.packager.io/srv/opf/openproject-ce/key | sudo apt-key add -
 
+# For OpenProject Stable/7
 sudo wget -O /etc/apt/sources.list.d/openproject-ce.list \
   https://dl.packager.io/srv/opf/openproject-ce/stable/7/installer/ubuntu/18.04.repo
+
+# For OpenProject Stable/8
+sudo wget -O /etc/apt/sources.list.d/openproject-ce.list \
+  https://dl.packager.io/srv/opf/openproject-ce/stable/8/installer/ubuntu/18.04.repo
 
 sudo apt-get update
 sudo apt-get install openproject
