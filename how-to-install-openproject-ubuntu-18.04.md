@@ -20,6 +20,16 @@ sudo apt-get install openproject
 
 Note: You may need to `sudo apt install wget apt-transport-https` for the above instructions to work.
 
+## Configurations
+Perform command bellow and follow its instructions in order to be able to use OpenProject:
+
+```sh
+sudo openproject configure
+```
+
+Note: in case of you want to reconfigure OpenProject, run `sudo openproject reconfigure` instead.
+
+
 ## Email notifications [Additional]
 
 
