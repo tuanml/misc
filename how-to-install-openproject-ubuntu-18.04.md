@@ -78,6 +78,9 @@ FromLineOverride=yes
 ### Confirming setup
 ```sh
 echo "Test message from Linux server using ssmtp" | sudo ssmtp -vvv your-email@some-domain.com
+
+# or do the following command if you get content from text file
+ssmtp -vvv your-email@some-domain.com < ssmtp_test_message.txt
 ```
 
 _Congratulations! You did it. ;)_
