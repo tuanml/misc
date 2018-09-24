@@ -27,7 +27,7 @@ $ vim /usr/local/share/jupyter/kernels/python3/kernel.json
 
 {
  "argv": [
-  "/usr/local/bin/python3", # <= assign proper path to your executable python
+  "/usr/local/bin/python3", # <= assign proper path to your python executable
   "-m",
   "ipykernel_launcher",
   "-f",
