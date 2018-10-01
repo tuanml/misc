@@ -1,6 +1,0 @@
-To: tuanlm@greenglobal.vn
-From: aiteam.fgw.lab@gmail.com
-Subject: [SSMTP] Test email from Linux sever
-
-Hello, world!
-
