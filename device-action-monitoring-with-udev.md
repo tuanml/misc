@@ -41,7 +41,7 @@ ls /etc/udev/rules.d -lh
 -rw-r--r-- 1 root root 630 Jul  6 12:57 97-usbboot.rules
 ```
 
-3. From above I've used Environment `ID_MODEL=USB2.0_Camera` under my udev rules for action `ACTION=="add"` and `ACTION==remove`.
+3. From above I've used Environment `ID_MODEL=USB2.0_Camera` under my udev rules for action `ACTION=="add"` and `ACTION=="remove"`.
 
   As reference from [here](http://reactivated.net/writing_udev_rules.html#files) for rule writing,
   `files in /etc/udev/rules.d/ are parsed in lexical order`;
@@ -53,11 +53,13 @@ ls /etc/udev/rules.d -lh
   
   ...
   # /etc/udev/rules.d/85-aicampj.usb_cameras.rules/etc/udev/rules.d/85-aicampj.usb_cameras.rules
-  ACTION=="add", ENV{ID_MODEL}=="USB2.0_Camera", RUN+="/usr/bin/touch /home/tuanlm/Desktop/udev/camera_is_conected.txt"
-  ACTION=="remove", ENV{ID_MODEL}=="USB2.0_Camera", RUN+="/bin/rm -rf /home/tuanlm/Desktop/udev/camera_is_conected.txt"
+  ACTION=="add", ENV{ID_MODEL}=="USB2.0_Camera", RUN+="/bin/bash /usr/local/my_plugin_script"
+  ACTION=="remove", ENV{ID_MODEL}=="USB2.0_Camera", RUN+="/bin/bash /usr/local/my_plugout_script"
   ```
 4. Run command `sudo udevadm control --reload-rules && udevadm trigger` for udev to reload with new rules.
-5. Finally, open file manager to check whether if the file is created or deleted while your usb device connect/disconect to/from the system.
-  This is just simple rule file to demonstrate how to use udev rules. The `RUN` option could be path to script file or a set of system commands.
-  
+5. Finally, check whether if the your scripts executed while your usb device connect/disconect to/from the system.
+
+This is just simple rule file to demonstrate how to use udev rules. The `RUN` option could be path to script file or a set of system commands.
+
+Hope it helps! Peace ;)
   
